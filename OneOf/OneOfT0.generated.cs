@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json;
 using static OneOf.Functions;
 
 namespace OneOf
@@ -14,6 +15,8 @@ namespace OneOf
             _value0 = value0;
         }
 
+        
+
         public object Value =>
             _index switch
             {
@@ -23,8 +26,10 @@ namespace OneOf
 
         public int Index => _index;
 
+        [JsonIgnore]
         public bool IsT0 => _index == 0;
 
+        [JsonIgnore]
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :

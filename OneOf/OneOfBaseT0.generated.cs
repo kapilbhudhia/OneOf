@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json;
 using static OneOf.Functions;
 
 namespace OneOf
@@ -18,6 +19,17 @@ namespace OneOf
             }
         }
 
+        protected OneOfBase(object value, int index)
+        {
+            _index = index;
+            _value0 = default;
+            switch (_index)
+            {
+                case 0: _value0 = (T0)value; break;
+                default: throw new InvalidOperationException();
+            }
+        }
+
         public object Value =>
             _index switch
             {
@@ -27,8 +39,10 @@ namespace OneOf
 
         public int Index => _index;
 
+        [JsonIgnore]
         public bool IsT0 => _index == 0;
 
+        [JsonIgnore]
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :

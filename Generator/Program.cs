@@ -7,7 +7,8 @@ using System;
 using System.Collections.Generic;
 
 var sourceRoot = GetFullPath(Combine(GetDirectoryName(GetExecutingAssembly().Location)!, @"..\..\..\.."));
-
+string newline = @"
+";
 for (var i = 1; i < 10; i++) {
     var output = GetContent(true, i);
     var outpath = Combine(sourceRoot, $"OneOf\\OneOfT{i - 1}.generated.cs");
@@ -38,6 +39,7 @@ string GetContent(bool isStruct, int i) {
     var sb = new StringBuilder();
     
     sb.Append(@$"using System;
+using Newtonsoft.Json;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 using static OneOf.Functions;
 
 namespace OneOf
@@ -67,6 +69,22 @@ namespace OneOf
         }}"
         )}
 
+        {IfStruct(
+        "",
+        $@"protected OneOfBase(object value, int index)
+        {{
+            _index = index;
+            {RangeJoined(@"
+            ", j => $"_value{j} = default;")}
+            switch (_index)
+            {{
+                {RangeJoined($@"
+                ", j => $"case {j}: _value{j} = ({genericArgs[j]})value; break;")}
+                default: throw new InvalidOperationException();
+            }}
+        }}"
+        )}
+
         public object Value =>
             _index switch
             {{
@@ -78,10 +96,12 @@ namespace OneOf
         public int Index => _index;
 
         {RangeJoined(@"
-        ", j=> $"public bool IsT{j} => _index == {j};")}
+        ", j=> $@"[JsonIgnore]
+        public bool IsT{j} => _index == {j};")}
 
         {RangeJoined(@"
-        ", j => $@"public T{j} AsT{j} =>
+        ", j => $@"[JsonIgnore]
+        public T{j} AsT{j} =>
             _index == {j} ?
                 _value{j} :
                 throw new InvalidOperationException($""Cannot return as T{j} as result is T{{_index}}"");")}

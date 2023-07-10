@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json;
 using static OneOf.Functions;
 
 namespace OneOf
@@ -70,6 +71,69 @@ namespace OneOf
             }
         }
 
+        protected OneOfBase(object value, int index)
+        {
+            _index = index;
+            _value0 = default;
+            _value1 = default;
+            _value2 = default;
+            _value3 = default;
+            _value4 = default;
+            _value5 = default;
+            _value6 = default;
+            _value7 = default;
+            _value8 = default;
+            _value9 = default;
+            _value10 = default;
+            _value11 = default;
+            _value12 = default;
+            _value13 = default;
+            _value14 = default;
+            _value15 = default;
+            _value16 = default;
+            _value17 = default;
+            _value18 = default;
+            _value19 = default;
+            _value20 = default;
+            _value21 = default;
+            _value22 = default;
+            _value23 = default;
+            _value24 = default;
+            _value25 = default;
+            _value26 = default;
+            switch (_index)
+            {
+                case 0: _value0 = (T0)value; break;
+                case 1: _value1 = (T1)value; break;
+                case 2: _value2 = (T2)value; break;
+                case 3: _value3 = (T3)value; break;
+                case 4: _value4 = (T4)value; break;
+                case 5: _value5 = (T5)value; break;
+                case 6: _value6 = (T6)value; break;
+                case 7: _value7 = (T7)value; break;
+                case 8: _value8 = (T8)value; break;
+                case 9: _value9 = (T9)value; break;
+                case 10: _value10 = (T10)value; break;
+                case 11: _value11 = (T11)value; break;
+                case 12: _value12 = (T12)value; break;
+                case 13: _value13 = (T13)value; break;
+                case 14: _value14 = (T14)value; break;
+                case 15: _value15 = (T15)value; break;
+                case 16: _value16 = (T16)value; break;
+                case 17: _value17 = (T17)value; break;
+                case 18: _value18 = (T18)value; break;
+                case 19: _value19 = (T19)value; break;
+                case 20: _value20 = (T20)value; break;
+                case 21: _value21 = (T21)value; break;
+                case 22: _value22 = (T22)value; break;
+                case 23: _value23 = (T23)value; break;
+                case 24: _value24 = (T24)value; break;
+                case 25: _value25 = (T25)value; break;
+                case 26: _value26 = (T26)value; break;
+                default: throw new InvalidOperationException();
+            }
+        }
+
         public object Value =>
             _index switch
             {
@@ -105,138 +169,192 @@ namespace OneOf
 
         public int Index => _index;
 
+        [JsonIgnore]
         public bool IsT0 => _index == 0;
+        [JsonIgnore]
         public bool IsT1 => _index == 1;
+        [JsonIgnore]
         public bool IsT2 => _index == 2;
+        [JsonIgnore]
         public bool IsT3 => _index == 3;
+        [JsonIgnore]
         public bool IsT4 => _index == 4;
+        [JsonIgnore]
         public bool IsT5 => _index == 5;
+        [JsonIgnore]
         public bool IsT6 => _index == 6;
+        [JsonIgnore]
         public bool IsT7 => _index == 7;
+        [JsonIgnore]
         public bool IsT8 => _index == 8;
+        [JsonIgnore]
         public bool IsT9 => _index == 9;
+        [JsonIgnore]
         public bool IsT10 => _index == 10;
+        [JsonIgnore]
         public bool IsT11 => _index == 11;
+        [JsonIgnore]
         public bool IsT12 => _index == 12;
+        [JsonIgnore]
         public bool IsT13 => _index == 13;
+        [JsonIgnore]
         public bool IsT14 => _index == 14;
+        [JsonIgnore]
         public bool IsT15 => _index == 15;
+        [JsonIgnore]
         public bool IsT16 => _index == 16;
+        [JsonIgnore]
         public bool IsT17 => _index == 17;
+        [JsonIgnore]
         public bool IsT18 => _index == 18;
+        [JsonIgnore]
         public bool IsT19 => _index == 19;
+        [JsonIgnore]
         public bool IsT20 => _index == 20;
+        [JsonIgnore]
         public bool IsT21 => _index == 21;
+        [JsonIgnore]
         public bool IsT22 => _index == 22;
+        [JsonIgnore]
         public bool IsT23 => _index == 23;
+        [JsonIgnore]
         public bool IsT24 => _index == 24;
+        [JsonIgnore]
         public bool IsT25 => _index == 25;
+        [JsonIgnore]
         public bool IsT26 => _index == 26;
 
+        [JsonIgnore]
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
+        [JsonIgnore]
         public T1 AsT1 =>
             _index == 1 ?
                 _value1 :
                 throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
+        [JsonIgnore]
         public T2 AsT2 =>
             _index == 2 ?
                 _value2 :
                 throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
+        [JsonIgnore]
         public T3 AsT3 =>
             _index == 3 ?
                 _value3 :
                 throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
+        [JsonIgnore]
         public T4 AsT4 =>
             _index == 4 ?
                 _value4 :
                 throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
+        [JsonIgnore]
         public T5 AsT5 =>
             _index == 5 ?
                 _value5 :
                 throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
+        [JsonIgnore]
         public T6 AsT6 =>
             _index == 6 ?
                 _value6 :
                 throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
+        [JsonIgnore]
         public T7 AsT7 =>
             _index == 7 ?
                 _value7 :
                 throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
+        [JsonIgnore]
         public T8 AsT8 =>
             _index == 8 ?
                 _value8 :
                 throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
+        [JsonIgnore]
         public T9 AsT9 =>
             _index == 9 ?
                 _value9 :
                 throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
+        [JsonIgnore]
         public T10 AsT10 =>
             _index == 10 ?
                 _value10 :
                 throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
+        [JsonIgnore]
         public T11 AsT11 =>
             _index == 11 ?
                 _value11 :
                 throw new InvalidOperationException($"Cannot return as T11 as result is T{_index}");
+        [JsonIgnore]
         public T12 AsT12 =>
             _index == 12 ?
                 _value12 :
                 throw new InvalidOperationException($"Cannot return as T12 as result is T{_index}");
+        [JsonIgnore]
         public T13 AsT13 =>
             _index == 13 ?
                 _value13 :
                 throw new InvalidOperationException($"Cannot return as T13 as result is T{_index}");
+        [JsonIgnore]
         public T14 AsT14 =>
             _index == 14 ?
                 _value14 :
                 throw new InvalidOperationException($"Cannot return as T14 as result is T{_index}");
+        [JsonIgnore]
         public T15 AsT15 =>
             _index == 15 ?
                 _value15 :
                 throw new InvalidOperationException($"Cannot return as T15 as result is T{_index}");
+        [JsonIgnore]
         public T16 AsT16 =>
             _index == 16 ?
                 _value16 :
                 throw new InvalidOperationException($"Cannot return as T16 as result is T{_index}");
+        [JsonIgnore]
         public T17 AsT17 =>
             _index == 17 ?
                 _value17 :
                 throw new InvalidOperationException($"Cannot return as T17 as result is T{_index}");
+        [JsonIgnore]
         public T18 AsT18 =>
             _index == 18 ?
                 _value18 :
                 throw new InvalidOperationException($"Cannot return as T18 as result is T{_index}");
+        [JsonIgnore]
         public T19 AsT19 =>
             _index == 19 ?
                 _value19 :
                 throw new InvalidOperationException($"Cannot return as T19 as result is T{_index}");
+        [JsonIgnore]
         public T20 AsT20 =>
             _index == 20 ?
                 _value20 :
                 throw new InvalidOperationException($"Cannot return as T20 as result is T{_index}");
+        [JsonIgnore]
         public T21 AsT21 =>
             _index == 21 ?
                 _value21 :
                 throw new InvalidOperationException($"Cannot return as T21 as result is T{_index}");
+        [JsonIgnore]
         public T22 AsT22 =>
             _index == 22 ?
                 _value22 :
                 throw new InvalidOperationException($"Cannot return as T22 as result is T{_index}");
+        [JsonIgnore]
         public T23 AsT23 =>
             _index == 23 ?
                 _value23 :
                 throw new InvalidOperationException($"Cannot return as T23 as result is T{_index}");
+        [JsonIgnore]
         public T24 AsT24 =>
             _index == 24 ?
                 _value24 :
                 throw new InvalidOperationException($"Cannot return as T24 as result is T{_index}");
+        [JsonIgnore]
         public T25 AsT25 =>
             _index == 25 ?
                 _value25 :
                 throw new InvalidOperationException($"Cannot return as T25 as result is T{_index}");
+        [JsonIgnore]
         public T26 AsT26 =>
             _index == 26 ?
                 _value26 :

@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json;
 using static OneOf.Functions;
 
 namespace OneOf
@@ -26,6 +27,25 @@ namespace OneOf
             }
         }
 
+        protected OneOfBase(object value, int index)
+        {
+            _index = index;
+            _value0 = default;
+            _value1 = default;
+            _value2 = default;
+            _value3 = default;
+            _value4 = default;
+            switch (_index)
+            {
+                case 0: _value0 = (T0)value; break;
+                case 1: _value1 = (T1)value; break;
+                case 2: _value2 = (T2)value; break;
+                case 3: _value3 = (T3)value; break;
+                case 4: _value4 = (T4)value; break;
+                default: throw new InvalidOperationException();
+            }
+        }
+
         public object Value =>
             _index switch
             {
@@ -39,28 +59,38 @@ namespace OneOf
 
         public int Index => _index;
 
+        [JsonIgnore]
         public bool IsT0 => _index == 0;
+        [JsonIgnore]
         public bool IsT1 => _index == 1;
+        [JsonIgnore]
         public bool IsT2 => _index == 2;
+        [JsonIgnore]
         public bool IsT3 => _index == 3;
+        [JsonIgnore]
         public bool IsT4 => _index == 4;
 
+        [JsonIgnore]
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
+        [JsonIgnore]
         public T1 AsT1 =>
             _index == 1 ?
                 _value1 :
                 throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
+        [JsonIgnore]
         public T2 AsT2 =>
             _index == 2 ?
                 _value2 :
                 throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
+        [JsonIgnore]
         public T3 AsT3 =>
             _index == 3 ?
                 _value3 :
                 throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
+        [JsonIgnore]
         public T4 AsT4 =>
             _index == 4 ?
                 _value4 :

@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json;
 using static OneOf.Functions;
 
 namespace OneOf
@@ -22,6 +23,8 @@ namespace OneOf
             _value4 = value4;
         }
 
+        
+
         public object Value =>
             _index switch
             {
@@ -35,28 +38,38 @@ namespace OneOf
 
         public int Index => _index;
 
+        [JsonIgnore]
         public bool IsT0 => _index == 0;
+        [JsonIgnore]
         public bool IsT1 => _index == 1;
+        [JsonIgnore]
         public bool IsT2 => _index == 2;
+        [JsonIgnore]
         public bool IsT3 => _index == 3;
+        [JsonIgnore]
         public bool IsT4 => _index == 4;
 
+        [JsonIgnore]
         public T0 AsT0 =>
             _index == 0 ?
                 _value0 :
                 throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
+        [JsonIgnore]
         public T1 AsT1 =>
             _index == 1 ?
                 _value1 :
                 throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
+        [JsonIgnore]
         public T2 AsT2 =>
             _index == 2 ?
                 _value2 :
                 throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
+        [JsonIgnore]
         public T3 AsT3 =>
             _index == 3 ?
                 _value3 :
                 throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
+        [JsonIgnore]
         public T4 AsT4 =>
             _index == 4 ?
                 _value4 :
