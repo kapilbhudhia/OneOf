@@ -1,5 +1,5 @@
 using System;
-using Newtonsoft.Json;
+using Newtonsoft.Json;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 using static OneOf.Functions;
 
 namespace OneOf
@@ -45,20 +45,20 @@ namespace OneOf
         public int Index => _index;
 
         [JsonIgnore]
-        public bool IsT0 => _index == 0;
-        [JsonIgnore]
-        public bool IsT1 => _index == 1;
+            protected bool IsT0 => _index == 0;
+            [JsonIgnore]
+            protected bool IsT1 => _index == 1;
 
         [JsonIgnore]
-        public T0 AsT0 =>
-            _index == 0 ?
-                _value0 :
-                throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-        [JsonIgnore]
-        public T1 AsT1 =>
-            _index == 1 ?
-                _value1 :
-                throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
+            protected T0 AsT0 =>
+                _index == 0 ?
+                    _value0 :
+                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
+            [JsonIgnore]
+            protected T1 AsT1 =>
+                _index == 1 ?
+                    _value1 :
+                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
 
         
 

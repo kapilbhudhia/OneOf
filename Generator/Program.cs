@@ -95,16 +95,29 @@ namespace OneOf
 
         public int Index => _index;
 
-        {RangeJoined(@"
-        ", j=> $@"[JsonIgnore]
-        public bool IsT{j} => _index == {j};")}
+        {IfStruct(
+            RangeJoined(@"
+            ", j=> $@"[JsonIgnore]
+            public bool IsT{j} => _index == {j};"),
+            RangeJoined(@"
+            ", j=> $@"[JsonIgnore]
+            public bool IsT{j}() => _index == {j};")
+        )}
 
-        {RangeJoined(@"
-        ", j => $@"[JsonIgnore]
-        public T{j} AsT{j} =>
-            _index == {j} ?
-                _value{j} :
-                throw new InvalidOperationException($""Cannot return as T{j} as result is T{{_index}}"");")}
+        {IfStruct(
+            RangeJoined(@"
+            ", j => $@"[JsonIgnore]
+            public T{j} AsT{j} =>
+                _index == {j} ?
+                    _value{j} :
+                    throw new InvalidOperationException($""Cannot return as T{j} as result is T{{_index}}"");"),
+            RangeJoined(@"
+            ", j => $@"[JsonIgnore]
+            public T{j} AsT{j}() =>
+                _index == {j} ?
+                    _value{j} :
+                    throw new InvalidOperationException($""Cannot return as T{j} as result is T{{_index}}"");")
+        )}
 
         {IfStruct(RangeJoined(@"
         ", j => $"public static implicit operator {className}<{genericArg}>(T{j} t) => new {className}<{genericArg}>({j}, value{j}: t);"))}

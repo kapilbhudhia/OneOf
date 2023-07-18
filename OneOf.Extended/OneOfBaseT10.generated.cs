@@ -1,5 +1,5 @@
 using System;
-using Newtonsoft.Json;
+using Newtonsoft.Json;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 using static OneOf.Functions;
 
 namespace OneOf
@@ -90,83 +90,83 @@ namespace OneOf
         public int Index => _index;
 
         [JsonIgnore]
-        public bool IsT0 => _index == 0;
-        [JsonIgnore]
-        public bool IsT1 => _index == 1;
-        [JsonIgnore]
-        public bool IsT2 => _index == 2;
-        [JsonIgnore]
-        public bool IsT3 => _index == 3;
-        [JsonIgnore]
-        public bool IsT4 => _index == 4;
-        [JsonIgnore]
-        public bool IsT5 => _index == 5;
-        [JsonIgnore]
-        public bool IsT6 => _index == 6;
-        [JsonIgnore]
-        public bool IsT7 => _index == 7;
-        [JsonIgnore]
-        public bool IsT8 => _index == 8;
-        [JsonIgnore]
-        public bool IsT9 => _index == 9;
-        [JsonIgnore]
-        public bool IsT10 => _index == 10;
+            protected bool IsT0 => _index == 0;
+            [JsonIgnore]
+            protected bool IsT1 => _index == 1;
+            [JsonIgnore]
+            protected bool IsT2 => _index == 2;
+            [JsonIgnore]
+            protected bool IsT3 => _index == 3;
+            [JsonIgnore]
+            protected bool IsT4 => _index == 4;
+            [JsonIgnore]
+            protected bool IsT5 => _index == 5;
+            [JsonIgnore]
+            protected bool IsT6 => _index == 6;
+            [JsonIgnore]
+            protected bool IsT7 => _index == 7;
+            [JsonIgnore]
+            protected bool IsT8 => _index == 8;
+            [JsonIgnore]
+            protected bool IsT9 => _index == 9;
+            [JsonIgnore]
+            protected bool IsT10 => _index == 10;
 
         [JsonIgnore]
-        public T0 AsT0 =>
-            _index == 0 ?
-                _value0 :
-                throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-        [JsonIgnore]
-        public T1 AsT1 =>
-            _index == 1 ?
-                _value1 :
-                throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-        [JsonIgnore]
-        public T2 AsT2 =>
-            _index == 2 ?
-                _value2 :
-                throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-        [JsonIgnore]
-        public T3 AsT3 =>
-            _index == 3 ?
-                _value3 :
-                throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-        [JsonIgnore]
-        public T4 AsT4 =>
-            _index == 4 ?
-                _value4 :
-                throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-        [JsonIgnore]
-        public T5 AsT5 =>
-            _index == 5 ?
-                _value5 :
-                throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-        [JsonIgnore]
-        public T6 AsT6 =>
-            _index == 6 ?
-                _value6 :
-                throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-        [JsonIgnore]
-        public T7 AsT7 =>
-            _index == 7 ?
-                _value7 :
-                throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-        [JsonIgnore]
-        public T8 AsT8 =>
-            _index == 8 ?
-                _value8 :
-                throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
-        [JsonIgnore]
-        public T9 AsT9 =>
-            _index == 9 ?
-                _value9 :
-                throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
-        [JsonIgnore]
-        public T10 AsT10 =>
-            _index == 10 ?
-                _value10 :
-                throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
+            protected T0 AsT0 =>
+                _index == 0 ?
+                    _value0 :
+                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
+            [JsonIgnore]
+            protected T1 AsT1 =>
+                _index == 1 ?
+                    _value1 :
+                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
+            [JsonIgnore]
+            protected T2 AsT2 =>
+                _index == 2 ?
+                    _value2 :
+                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
+            [JsonIgnore]
+            protected T3 AsT3 =>
+                _index == 3 ?
+                    _value3 :
+                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
+            [JsonIgnore]
+            protected T4 AsT4 =>
+                _index == 4 ?
+                    _value4 :
+                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
+            [JsonIgnore]
+            protected T5 AsT5 =>
+                _index == 5 ?
+                    _value5 :
+                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
+            [JsonIgnore]
+            protected T6 AsT6 =>
+                _index == 6 ?
+                    _value6 :
+                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
+            [JsonIgnore]
+            protected T7 AsT7 =>
+                _index == 7 ?
+                    _value7 :
+                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
+            [JsonIgnore]
+            protected T8 AsT8 =>
+                _index == 8 ?
+                    _value8 :
+                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
+            [JsonIgnore]
+            protected T9 AsT9 =>
+                _index == 9 ?
+                    _value9 :
+                    throw new InvalidOperationException($"Cannot return as T9 as result is T{_index}");
+            [JsonIgnore]
+            protected T10 AsT10 =>
+                _index == 10 ?
+                    _value10 :
+                    throw new InvalidOperationException($"Cannot return as T10 as result is T{_index}");
 
         
 
