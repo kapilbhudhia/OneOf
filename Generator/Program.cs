@@ -96,27 +96,27 @@ namespace OneOf
         public int Index => _index;
 
         {IfStruct(
-            RangeJoined(@"
-            ", j=> $@"[JsonIgnore]
-            public bool IsT{j} => _index == {j};"),
-            RangeJoined(@"
-            ", j=> $@"[JsonIgnore]
-            public bool IsT{j}() => _index == {j};")
+        RangeJoined(@"
+        ", j=> $@"[JsonIgnore]
+        public bool IsT{j} => _index == {j};"),
+        RangeJoined(@"
+        ", j=> $@"
+        public bool IsT{j}() => _index == {j};")
         )}
 
         {IfStruct(
-            RangeJoined(@"
-            ", j => $@"[JsonIgnore]
-            public T{j} AsT{j} =>
-                _index == {j} ?
-                    _value{j} :
-                    throw new InvalidOperationException($""Cannot return as T{j} as result is T{{_index}}"");"),
-            RangeJoined(@"
-            ", j => $@"[JsonIgnore]
-            public T{j} AsT{j}() =>
-                _index == {j} ?
-                    _value{j} :
-                    throw new InvalidOperationException($""Cannot return as T{j} as result is T{{_index}}"");")
+        RangeJoined(@"
+        ", j => $@"[JsonIgnore]
+        public T{j} AsT{j} =>
+            _index == {j} ?
+                _value{j} :
+                throw new InvalidOperationException($""Cannot return as T{j} as result is T{{_index}}"");"),
+        RangeJoined(@"
+        ", j => $@"
+        public T{j} AsT{j}() =>
+            _index == {j} ?
+                _value{j} :
+                throw new InvalidOperationException($""Cannot return as T{j} as result is T{{_index}}"");")
         )}
 
         {IfStruct(RangeJoined(@"
@@ -180,17 +180,17 @@ namespace OneOf
                 return $@"
 		public bool TryPickT{j}(out T{j} value, out {remainderType} remainder)
 		{{
-			value = IsT{j} ? AsT{j} : default;
+			value = {IfStruct($"IsT{j} ? AsT{j}", $"IsT{j}() ? AsT{j}()")} : default;
             remainder = _index switch
             {{
                 {RangeJoined(@"
                 ", k => 
                     k == j ?
                         $"{k} => default," :
-                        $"{k} => AsT{k},")}
+                        $"{k} => {IfStruct($"AsT{k}", $"AsT{k}()")},")}
                 _ => throw new InvalidOperationException()
             }};
-			return this.IsT{j};
+			return {IfStruct($"this.IsT{j}", $"this.IsT{j}()")};
 		}}";
             })
         );

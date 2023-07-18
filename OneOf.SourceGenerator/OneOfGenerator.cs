@@ -99,7 +99,7 @@ namespace {classSymbol.ContainingNamespace.ToDisplayString()}
             {
                 source.Append($@"
         public static implicit operator {classNameWithGenericTypes}({arg.ToDisplayString()} _) => new {classNameWithGenericTypes}(_);
-        public static explicit operator {arg.ToDisplayString()}({classNameWithGenericTypes} _) => _.As{param.Name};
+        public static explicit operator {arg.ToDisplayString()}({classNameWithGenericTypes} _) => _.As{param.Name}();
 ");
             }
 

@@ -33,27 +33,27 @@ namespace OneOf
         public int Index => _index;
 
         [JsonIgnore]
-            public bool IsT0 => _index == 0;
-            [JsonIgnore]
-            public bool IsT1 => _index == 1;
-            [JsonIgnore]
-            public bool IsT2 => _index == 2;
+        public bool IsT0 => _index == 0;
+        [JsonIgnore]
+        public bool IsT1 => _index == 1;
+        [JsonIgnore]
+        public bool IsT2 => _index == 2;
 
         [JsonIgnore]
-            public T0 AsT0 =>
-                _index == 0 ?
-                    _value0 :
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-            [JsonIgnore]
-            public T1 AsT1 =>
-                _index == 1 ?
-                    _value1 :
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-            [JsonIgnore]
-            public T2 AsT2 =>
-                _index == 2 ?
-                    _value2 :
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
+        [JsonIgnore]
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
+        [JsonIgnore]
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
 
         public static implicit operator OneOf<T0, T1, T2>(T0 t) => new OneOf<T0, T1, T2>(0, value0: t);
         public static implicit operator OneOf<T0, T1, T2>(T1 t) => new OneOf<T0, T1, T2>(1, value1: t);

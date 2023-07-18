@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace OneOf
 {
-    public class OneOfMongoSerializer<T> : SerializerBase<T>
+    public class OneOfMongoSerializer<T> : SerializerBase<T>, IBsonDocumentSerializer
     {
         public override void Serialize(
             MongoDB.Bson.Serialization.BsonSerializationContext context,
@@ -24,5 +24,10 @@ namespace OneOf
             return JsonConvert.DeserializeObject<T>(jsonDocument)!;
         }
 
+        public bool TryGetMemberSerializationInfo(string memberName, out BsonSerializationInfo serializationInfo)
+        {
+            serializationInfo = default!;
+            return false;
+        }
     }
 }

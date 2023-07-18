@@ -59,42 +59,42 @@ namespace OneOf
 
         public int Index => _index;
 
-        [JsonIgnore]
-            protected bool IsT0 => _index == 0;
-            [JsonIgnore]
-            protected bool IsT1 => _index == 1;
-            [JsonIgnore]
-            protected bool IsT2 => _index == 2;
-            [JsonIgnore]
-            protected bool IsT3 => _index == 3;
-            [JsonIgnore]
-            protected bool IsT4 => _index == 4;
+        
+        public bool IsT0() => _index == 0;
+        
+        public bool IsT1() => _index == 1;
+        
+        public bool IsT2() => _index == 2;
+        
+        public bool IsT3() => _index == 3;
+        
+        public bool IsT4() => _index == 4;
 
-        [JsonIgnore]
-            protected T0 AsT0 =>
-                _index == 0 ?
-                    _value0 :
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-            [JsonIgnore]
-            protected T1 AsT1 =>
-                _index == 1 ?
-                    _value1 :
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-            [JsonIgnore]
-            protected T2 AsT2 =>
-                _index == 2 ?
-                    _value2 :
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-            [JsonIgnore]
-            protected T3 AsT3 =>
-                _index == 3 ?
-                    _value3 :
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-            [JsonIgnore]
-            protected T4 AsT4 =>
-                _index == 4 ?
-                    _value4 :
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
+        
+        public T0 AsT0() =>
+            _index == 0 ?
+                _value0 :
+                throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
+        
+        public T1 AsT1() =>
+            _index == 1 ?
+                _value1 :
+                throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
+        
+        public T2 AsT2() =>
+            _index == 2 ?
+                _value2 :
+                throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
+        
+        public T3 AsT3() =>
+            _index == 3 ?
+                _value3 :
+                throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
+        
+        public T4 AsT4() =>
+            _index == 4 ?
+                _value4 :
+                throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
 
         
 
@@ -159,77 +159,77 @@ namespace OneOf
 
 		public bool TryPickT0(out T0 value, out OneOf<T1, T2, T3, T4> remainder)
 		{
-			value = IsT0 ? AsT0 : default;
+			value = IsT0() ? AsT0() : default;
             remainder = _index switch
             {
                 0 => default,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
+                1 => AsT1(),
+                2 => AsT2(),
+                3 => AsT3(),
+                4 => AsT4(),
                 _ => throw new InvalidOperationException()
             };
-			return this.IsT0;
+			return this.IsT0();
 		}
         
 		public bool TryPickT1(out T1 value, out OneOf<T0, T2, T3, T4> remainder)
 		{
-			value = IsT1 ? AsT1 : default;
+			value = IsT1() ? AsT1() : default;
             remainder = _index switch
             {
-                0 => AsT0,
+                0 => AsT0(),
                 1 => default,
-                2 => AsT2,
-                3 => AsT3,
-                4 => AsT4,
+                2 => AsT2(),
+                3 => AsT3(),
+                4 => AsT4(),
                 _ => throw new InvalidOperationException()
             };
-			return this.IsT1;
+			return this.IsT1();
 		}
         
 		public bool TryPickT2(out T2 value, out OneOf<T0, T1, T3, T4> remainder)
 		{
-			value = IsT2 ? AsT2 : default;
+			value = IsT2() ? AsT2() : default;
             remainder = _index switch
             {
-                0 => AsT0,
-                1 => AsT1,
+                0 => AsT0(),
+                1 => AsT1(),
                 2 => default,
-                3 => AsT3,
-                4 => AsT4,
+                3 => AsT3(),
+                4 => AsT4(),
                 _ => throw new InvalidOperationException()
             };
-			return this.IsT2;
+			return this.IsT2();
 		}
         
 		public bool TryPickT3(out T3 value, out OneOf<T0, T1, T2, T4> remainder)
 		{
-			value = IsT3 ? AsT3 : default;
+			value = IsT3() ? AsT3() : default;
             remainder = _index switch
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
+                0 => AsT0(),
+                1 => AsT1(),
+                2 => AsT2(),
                 3 => default,
-                4 => AsT4,
+                4 => AsT4(),
                 _ => throw new InvalidOperationException()
             };
-			return this.IsT3;
+			return this.IsT3();
 		}
         
 		public bool TryPickT4(out T4 value, out OneOf<T0, T1, T2, T3> remainder)
 		{
-			value = IsT4 ? AsT4 : default;
+			value = IsT4() ? AsT4() : default;
             remainder = _index switch
             {
-                0 => AsT0,
-                1 => AsT1,
-                2 => AsT2,
-                3 => AsT3,
+                0 => AsT0(),
+                1 => AsT1(),
+                2 => AsT2(),
+                3 => AsT3(),
                 4 => default,
                 _ => throw new InvalidOperationException()
             };
-			return this.IsT4;
+			return this.IsT4();
 		}
 
         bool Equals(OneOfBase<T0, T1, T2, T3, T4> other) =>

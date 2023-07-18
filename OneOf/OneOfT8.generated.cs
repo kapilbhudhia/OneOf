@@ -51,69 +51,69 @@ namespace OneOf
         public int Index => _index;
 
         [JsonIgnore]
-            public bool IsT0 => _index == 0;
-            [JsonIgnore]
-            public bool IsT1 => _index == 1;
-            [JsonIgnore]
-            public bool IsT2 => _index == 2;
-            [JsonIgnore]
-            public bool IsT3 => _index == 3;
-            [JsonIgnore]
-            public bool IsT4 => _index == 4;
-            [JsonIgnore]
-            public bool IsT5 => _index == 5;
-            [JsonIgnore]
-            public bool IsT6 => _index == 6;
-            [JsonIgnore]
-            public bool IsT7 => _index == 7;
-            [JsonIgnore]
-            public bool IsT8 => _index == 8;
+        public bool IsT0 => _index == 0;
+        [JsonIgnore]
+        public bool IsT1 => _index == 1;
+        [JsonIgnore]
+        public bool IsT2 => _index == 2;
+        [JsonIgnore]
+        public bool IsT3 => _index == 3;
+        [JsonIgnore]
+        public bool IsT4 => _index == 4;
+        [JsonIgnore]
+        public bool IsT5 => _index == 5;
+        [JsonIgnore]
+        public bool IsT6 => _index == 6;
+        [JsonIgnore]
+        public bool IsT7 => _index == 7;
+        [JsonIgnore]
+        public bool IsT8 => _index == 8;
 
         [JsonIgnore]
-            public T0 AsT0 =>
-                _index == 0 ?
-                    _value0 :
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
-            [JsonIgnore]
-            public T1 AsT1 =>
-                _index == 1 ?
-                    _value1 :
-                    throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
-            [JsonIgnore]
-            public T2 AsT2 =>
-                _index == 2 ?
-                    _value2 :
-                    throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
-            [JsonIgnore]
-            public T3 AsT3 =>
-                _index == 3 ?
-                    _value3 :
-                    throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
-            [JsonIgnore]
-            public T4 AsT4 =>
-                _index == 4 ?
-                    _value4 :
-                    throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
-            [JsonIgnore]
-            public T5 AsT5 =>
-                _index == 5 ?
-                    _value5 :
-                    throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
-            [JsonIgnore]
-            public T6 AsT6 =>
-                _index == 6 ?
-                    _value6 :
-                    throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
-            [JsonIgnore]
-            public T7 AsT7 =>
-                _index == 7 ?
-                    _value7 :
-                    throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
-            [JsonIgnore]
-            public T8 AsT8 =>
-                _index == 8 ?
-                    _value8 :
-                    throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
+        public T0 AsT0 =>
+            _index == 0 ?
+                _value0 :
+                throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
+        [JsonIgnore]
+        public T1 AsT1 =>
+            _index == 1 ?
+                _value1 :
+                throw new InvalidOperationException($"Cannot return as T1 as result is T{_index}");
+        [JsonIgnore]
+        public T2 AsT2 =>
+            _index == 2 ?
+                _value2 :
+                throw new InvalidOperationException($"Cannot return as T2 as result is T{_index}");
+        [JsonIgnore]
+        public T3 AsT3 =>
+            _index == 3 ?
+                _value3 :
+                throw new InvalidOperationException($"Cannot return as T3 as result is T{_index}");
+        [JsonIgnore]
+        public T4 AsT4 =>
+            _index == 4 ?
+                _value4 :
+                throw new InvalidOperationException($"Cannot return as T4 as result is T{_index}");
+        [JsonIgnore]
+        public T5 AsT5 =>
+            _index == 5 ?
+                _value5 :
+                throw new InvalidOperationException($"Cannot return as T5 as result is T{_index}");
+        [JsonIgnore]
+        public T6 AsT6 =>
+            _index == 6 ?
+                _value6 :
+                throw new InvalidOperationException($"Cannot return as T6 as result is T{_index}");
+        [JsonIgnore]
+        public T7 AsT7 =>
+            _index == 7 ?
+                _value7 :
+                throw new InvalidOperationException($"Cannot return as T7 as result is T{_index}");
+        [JsonIgnore]
+        public T8 AsT8 =>
+            _index == 8 ?
+                _value8 :
+                throw new InvalidOperationException($"Cannot return as T8 as result is T{_index}");
 
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T0 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(0, value0: t);
         public static implicit operator OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(T1 t) => new OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8>(1, value1: t);

@@ -39,14 +39,14 @@ namespace OneOf
 
         public int Index => _index;
 
-        [JsonIgnore]
-            protected bool IsT0 => _index == 0;
+        
+        public bool IsT0() => _index == 0;
 
-        [JsonIgnore]
-            protected T0 AsT0 =>
-                _index == 0 ?
-                    _value0 :
-                    throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
+        
+        public T0 AsT0() =>
+            _index == 0 ?
+                _value0 :
+                throw new InvalidOperationException($"Cannot return as T0 as result is T{_index}");
 
         
 
