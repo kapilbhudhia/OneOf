@@ -132,6 +132,27 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public async System.Threading.Tasks.Task<TResult> MatchAsync<TResult>(Func<T0, System.Threading.Tasks.Task<TResult>> f0, Func<T1, System.Threading.Tasks.Task<TResult>> f1, Func<T2, System.Threading.Tasks.Task<TResult>> f2, Func<T3, System.Threading.Tasks.Task<TResult>> f3)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return await f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return await f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return await f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return await f3(_value3);
+            }
+            throw new InvalidOperationException();
+        }
+
         
 
         

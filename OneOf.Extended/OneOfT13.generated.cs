@@ -316,6 +316,67 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public async System.Threading.Tasks.Task<TResult> MatchAsync<TResult>(Func<T0, System.Threading.Tasks.Task<TResult>> f0, Func<T1, System.Threading.Tasks.Task<TResult>> f1, Func<T2, System.Threading.Tasks.Task<TResult>> f2, Func<T3, System.Threading.Tasks.Task<TResult>> f3, Func<T4, System.Threading.Tasks.Task<TResult>> f4, Func<T5, System.Threading.Tasks.Task<TResult>> f5, Func<T6, System.Threading.Tasks.Task<TResult>> f6, Func<T7, System.Threading.Tasks.Task<TResult>> f7, Func<T8, System.Threading.Tasks.Task<TResult>> f8, Func<T9, System.Threading.Tasks.Task<TResult>> f9, Func<T10, System.Threading.Tasks.Task<TResult>> f10, Func<T11, System.Threading.Tasks.Task<TResult>> f11, Func<T12, System.Threading.Tasks.Task<TResult>> f12, Func<T13, System.Threading.Tasks.Task<TResult>> f13)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return await f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return await f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return await f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return await f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return await f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return await f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return await f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return await f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return await f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return await f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return await f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return await f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return await f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return await f13(_value13);
+            }
+            throw new InvalidOperationException();
+        }
+
         public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT0(T0 input) => input;
         public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT1(T1 input) => input;
         public static OneOf<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromT2(T2 input) => input;

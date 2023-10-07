@@ -56,6 +56,15 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public async System.Threading.Tasks.Task<TResult> MatchAsync<TResult>(Func<T0, System.Threading.Tasks.Task<TResult>> f0)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return await f0(_value0);
+            }
+            throw new InvalidOperationException();
+        }
+
         public static OneOf<T0> FromT0(T0 input) => input;
 
         

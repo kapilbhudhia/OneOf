@@ -8,7 +8,7 @@
             "name": "Run Generator",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "Generator(build)",
+            "preLaunchTask": "Generator - build",
             // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/Generator/bin/Debug/net6.0/Generator.dll",
             "args": [],

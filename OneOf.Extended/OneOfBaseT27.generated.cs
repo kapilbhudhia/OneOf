@@ -636,6 +636,123 @@ namespace OneOf
             throw new InvalidOperationException();
         }
 
+        public async System.Threading.Tasks.Task<TResult> MatchAsync<TResult>(Func<T0, System.Threading.Tasks.Task<TResult>> f0, Func<T1, System.Threading.Tasks.Task<TResult>> f1, Func<T2, System.Threading.Tasks.Task<TResult>> f2, Func<T3, System.Threading.Tasks.Task<TResult>> f3, Func<T4, System.Threading.Tasks.Task<TResult>> f4, Func<T5, System.Threading.Tasks.Task<TResult>> f5, Func<T6, System.Threading.Tasks.Task<TResult>> f6, Func<T7, System.Threading.Tasks.Task<TResult>> f7, Func<T8, System.Threading.Tasks.Task<TResult>> f8, Func<T9, System.Threading.Tasks.Task<TResult>> f9, Func<T10, System.Threading.Tasks.Task<TResult>> f10, Func<T11, System.Threading.Tasks.Task<TResult>> f11, Func<T12, System.Threading.Tasks.Task<TResult>> f12, Func<T13, System.Threading.Tasks.Task<TResult>> f13, Func<T14, System.Threading.Tasks.Task<TResult>> f14, Func<T15, System.Threading.Tasks.Task<TResult>> f15, Func<T16, System.Threading.Tasks.Task<TResult>> f16, Func<T17, System.Threading.Tasks.Task<TResult>> f17, Func<T18, System.Threading.Tasks.Task<TResult>> f18, Func<T19, System.Threading.Tasks.Task<TResult>> f19, Func<T20, System.Threading.Tasks.Task<TResult>> f20, Func<T21, System.Threading.Tasks.Task<TResult>> f21, Func<T22, System.Threading.Tasks.Task<TResult>> f22, Func<T23, System.Threading.Tasks.Task<TResult>> f23, Func<T24, System.Threading.Tasks.Task<TResult>> f24, Func<T25, System.Threading.Tasks.Task<TResult>> f25, Func<T26, System.Threading.Tasks.Task<TResult>> f26, Func<T27, System.Threading.Tasks.Task<TResult>> f27)
+        {
+            if (_index == 0 && f0 != null)
+            {
+                return await f0(_value0);
+            }
+            if (_index == 1 && f1 != null)
+            {
+                return await f1(_value1);
+            }
+            if (_index == 2 && f2 != null)
+            {
+                return await f2(_value2);
+            }
+            if (_index == 3 && f3 != null)
+            {
+                return await f3(_value3);
+            }
+            if (_index == 4 && f4 != null)
+            {
+                return await f4(_value4);
+            }
+            if (_index == 5 && f5 != null)
+            {
+                return await f5(_value5);
+            }
+            if (_index == 6 && f6 != null)
+            {
+                return await f6(_value6);
+            }
+            if (_index == 7 && f7 != null)
+            {
+                return await f7(_value7);
+            }
+            if (_index == 8 && f8 != null)
+            {
+                return await f8(_value8);
+            }
+            if (_index == 9 && f9 != null)
+            {
+                return await f9(_value9);
+            }
+            if (_index == 10 && f10 != null)
+            {
+                return await f10(_value10);
+            }
+            if (_index == 11 && f11 != null)
+            {
+                return await f11(_value11);
+            }
+            if (_index == 12 && f12 != null)
+            {
+                return await f12(_value12);
+            }
+            if (_index == 13 && f13 != null)
+            {
+                return await f13(_value13);
+            }
+            if (_index == 14 && f14 != null)
+            {
+                return await f14(_value14);
+            }
+            if (_index == 15 && f15 != null)
+            {
+                return await f15(_value15);
+            }
+            if (_index == 16 && f16 != null)
+            {
+                return await f16(_value16);
+            }
+            if (_index == 17 && f17 != null)
+            {
+                return await f17(_value17);
+            }
+            if (_index == 18 && f18 != null)
+            {
+                return await f18(_value18);
+            }
+            if (_index == 19 && f19 != null)
+            {
+                return await f19(_value19);
+            }
+            if (_index == 20 && f20 != null)
+            {
+                return await f20(_value20);
+            }
+            if (_index == 21 && f21 != null)
+            {
+                return await f21(_value21);
+            }
+            if (_index == 22 && f22 != null)
+            {
+                return await f22(_value22);
+            }
+            if (_index == 23 && f23 != null)
+            {
+                return await f23(_value23);
+            }
+            if (_index == 24 && f24 != null)
+            {
+                return await f24(_value24);
+            }
+            if (_index == 25 && f25 != null)
+            {
+                return await f25(_value25);
+            }
+            if (_index == 26 && f26 != null)
+            {
+                return await f26(_value26);
+            }
+            if (_index == 27 && f27 != null)
+            {
+                return await f27(_value27);
+            }
+            throw new InvalidOperationException();
+        }
+
         
 
         

@@ -143,6 +143,16 @@ namespace OneOf
             throw new InvalidOperationException();
         }}
 
+        public async System.Threading.Tasks.Task<TResult> MatchAsync<TResult>({RangeJoined(", ", e => $"Func<T{e}, System.Threading.Tasks.Task<TResult>> f{e}")})
+        {{
+            {RangeJoined(@"
+            ", j => $@"if (_index == {j} && f{j} != null)
+            {{
+                return await f{j}(_value{j});
+            }}")}
+            throw new InvalidOperationException();
+        }}
+
         {IfStruct(genericArgs.Joined(@"
         ", bindToType => $@"public static OneOf<{genericArgs.Joined(", ")}> From{bindToType}({bindToType} input) => input;"))}
 
