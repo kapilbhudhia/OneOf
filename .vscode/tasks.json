@@ -25,6 +25,7 @@
                 "build",
                 "${workspaceFolder}/OneOf/OneOf.csproj",
                 "/property:GenerateFullPaths=true",
+                "/property:configuration=Release",
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile",
@@ -34,13 +35,14 @@
             }
         },
         {
-            "label": "OneOfSourceGenerator(build)",
+            "label": "OneOfSourceGenerator - build",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/OneOf.SourceGenerator/OneOfGenerator.csproj",
+                "${workspaceFolder}/OneOf.SourceGenerator/OneOf.SourceGenerator.csproj",
                 "/property:GenerateFullPaths=true",
+                "/property:configuration=Release",
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile",

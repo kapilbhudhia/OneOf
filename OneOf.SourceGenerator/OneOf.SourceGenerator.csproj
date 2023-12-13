@@ -1,18 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Harry McIntyre, Damian Romanowski</Authors>
     <Title>OneOf - Easy Discriminated Unions for c#</Title>
     <Company>Harry McIntyre</Company>
-    <PackageVersion>1.0.2</PackageVersion>
+    <PackageVersion>1.0.3</PackageVersion>
     <Product>Harry McIntyre</Product>
     <Description>This source generator automaticly implements OneOfBase hierarchies</Description>
     <PackageProjectUrl>https://github.com/mcintyre321/OneOf/</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>discriminated unions, return type, match switch, generator, source generator</PackageTags>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PackageId>OneOf.SourceGeneratorWithSerialization</PackageId>
+    <PackageId>OneOf.SourceGenerator.SerializationSupport</PackageId>
     <Copyright>Harry McIntyre</Copyright>
     <RootNamespace>OneOf</RootNamespace>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
